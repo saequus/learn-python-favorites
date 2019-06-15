@@ -1,22 +1,23 @@
-def gen_primes():
+def gen_primes() -> int:
     """ Generate an infinite sequence of prime numbers.
+    :return: int
     """
-    current = {}
-    element = 2
+    table = {}
+    i = 2
     while True:
-        if element not in current:
-            yield element
-            current[element * element] = [element]
+        if i not in table:
+            yield i
+            table[i * i] = [i]
         else:
-            for p in current[element]:
-                current.setdefault(p + element, []).append(p)
-            del current[element]
+            for previous in table[i]:
+                table.setdefault(previous + i, []).append(previous)
+            del table[i]
 
-        element += 1
+        i += 1
 
 
 i = 0
 x = gen_primes()
-while i < 100:
+while i < 20:
     print(next(x))
     i += 1

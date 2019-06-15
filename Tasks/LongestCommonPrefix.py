@@ -1,42 +1,27 @@
-x = ["flower", "flow", "flight"]
+# LeetCode 14. Longest Common Prefix
+
+x = ['What if I could swim', 'What is it?', 'Where are sweets']
+y = ["flower", "flow", "flight"]
 
 
-# class Solution(object):
-#     def longestCommonPrefix(self, strs):
-#         length = len(min(strs))
-#         stack = str()
-#         for i in range(length):
-#             let = list(strs[0])[i]
-#             for j in range(len(strs)):
-#                 word = list(strs[j])
-#                 if word[i] == let:
-#                     stack += let
-#
-#         return stack
-#
-#
-# f = Solution()
-# print(f.longestCommonPrefix(x))
+def longest_common_prefix(words) -> str:
+    """ Return longest common prefix for all words in the list.
+    :param: list (words)
+    :return: str
+    """
+    if not words or len(words) == 0:
+        return ""
+    prefix = words[0]
+
+    for i in range(1, len(words)):
+        j = 0
+        while j < min(len(prefix), len(words[i])):
+            if prefix[j] != words[i][j]:
+                break
+            j += 1
+        prefix = prefix[:j]
+    return prefix
 
 
-
-class Solution(object):
-    def longestCommonPrefix(self, strs):
-        length = len(list(min(strs)))
-        word = list(min(strs))
-        stack = str()
-        for letter in range(length):
-            for i in range(len(strs)):
-                word2 = list(strs[i])
-                if word[letter] == word2[letter]:
-                    stack += word[letter]
-        return stack
-
-
-g = Solution()
-print(g.longestCommonPrefix(x))
-
-print(x[0])
-
-# letter = str(list(x[0])[:2])
-# print(letter)
+print(longest_common_prefix(x))
+print(longest_common_prefix(y))

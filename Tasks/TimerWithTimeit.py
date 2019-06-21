@@ -1,33 +1,24 @@
 import timeit
 import random
 
+# Example of using timeit module
+# In this particular example 2nd, 3rd and 4th columns compare time spend
+# while building range, list and dictionary
+
 for i in range(10000, 100001, 20000):
-    g = []
-    t = timeit.Timer('random.randrange(%d) in x' %i, 'from __main__ import random, x')
-    x = list(range(i))
-    lst_time = t.timeit(number=1000)
-    g.append(j for j in range(i))
-    sec_time = t.timeit(number=1000)
-    x = {j: None for j in range(i)}
-    d_time = t.timeit(number=1000)
-    print("%d, %10.3f, %10.3f,  %10.3f" % (i, lst_time, sec_time, d_time))
+    list_obj = []
+    t = timeit.Timer(
+        'random.randrange(%d) in range_obj' % i,
+        'from __main__ import random, range_obj')
 
+    range_obj = list(range(i))  # build range
+    range_time = t.timeit(number=1000)
 
+    list_obj.append(j for j in range(i)) # build list
+    list_time = t.timeit(number=1000)
 
-
-# for i in range(10000, 200001, 20000):
-#     t = timeit.Timer('random.randrange(%d) in x'%i, 'from __main__ import random, x')
-#     x = list(range(i))
-#     lst_time = t.timeit(number=10000)
-#     x = list(range(i))
-#     lst_time2 = t.timeit(number=1000)
-#     print("%d, %10.3f, %10.3f" % (i, lst_time, lst_time2))
-#
-#
-# for i in range(10000, 100000, 10000):
-#     t = timeit.Timer('random.randrange(%d) in x'%i, 'from __main__ import random, x')
-#     x = list(range(i))
-#     lst_time = t.timeit(number=10000)
-#     x = {j: None for j in range(i)}
-#     d_time = t.timeit(number=10000)
-#     print("%d, %10f, %10f" % (i, lst_time, d_time))
+    dictionary_obj = {j: None for j in range(i)}  # build dictionary
+    dictionary_time = t.timeit(number=1000)
+    print(
+        "%d, %10.3f, %10.3f,  %10.3f" % (
+            i, range_time, list_time, dictionary_time))

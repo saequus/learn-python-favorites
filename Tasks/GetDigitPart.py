@@ -3,8 +3,8 @@
 
 def get_digit_part(string) -> int:
     """ Returns part with digit(s) if the string starts with one.
-    :param: string
-    :return: int
+    :param string:
+    :return int:
     """
     negative = False
     punctuation_set = {

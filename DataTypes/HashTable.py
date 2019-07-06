@@ -12,7 +12,7 @@ class HashTable:
             self.data[hashvalue] = data
         else:
             if self.slots[hashvalue] == key:
-                self.data[hashvalue] = data  # replace
+                self.data[hashvalue] = data
             else:
                 nextslot = self.rehash(hashvalue, len(self.slots))
                 while self.slots[nextslot] is not None and \

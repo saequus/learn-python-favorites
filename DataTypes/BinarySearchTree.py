@@ -48,4 +48,3 @@ list_of_nodes_values = [1, 2, 3, 4, 5, 6, 7]
 test_root = sorted_array_to_bst(list_of_nodes_values)
 print("PreOrder Traversal of constructed BST ")
 pre_order(test_root)
-

@@ -43,38 +43,13 @@ def quick_sort(arr):
 
 
 a = [3, 1, 14, 23, 55, 31, 15, 7, 8, 18]
-quick_sort(a)
-print(a)
-
-
 b = [2, 5, 3, 1, 23, 15, 16, 13, 22, 19, 44, 32, 38, 7]
 t = [2, 19, 22, 12, 3, 1, 7, 55, 32, 21, 2, 45, 32, 9]
-
-
-def part_for_quick_sort(arr, low, high):
-    i = low - 1
-    pivot = arr[high]
-    for j in range(low, high):
-        if arr[j] <= pivot:
-            i += 1
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[i+1], arr[high] = arr[high], arr[i+1]
-    return i + 1
-
-
-def qck_helper(arr, low, high):
-    if low < high:
-        pi = part_for_quick_sort(arr, low, high)
-        part_for_quick_sort(arr, 0, pi - 1)
-        part_for_quick_sort(arr, pi + 1, high)
-
-
-def qck_sort(arr):
-    return qck_helper(arr, 0, len(arr)-1)
-
-qck_sort(t)
+quick_sort(a)
+quick_sort(b)
+quick_sort(t)
+print(a)
+print(b)
 print(t)
-
-
 
 

@@ -1,8 +1,8 @@
-# Задачи можно найти тут:
+# Tasks can be found here:
 # https://informatics.mccme.ru/course/view.php?id=974
 
 
-# Задача №1619. Смайлики
+# Task №1619. Smiles
 # https://informatics.mccme.ru/mod/statements/view3.php?id=17548&chapterid=1619
 
 
@@ -24,7 +24,7 @@ s = ':-)(dj:)djdns.()())))--(:-:]----:;-;-K[]--:-);;---'
 print(count_smiles(s))
 
 
-# Задача №1323. Префикс-функция
+# Task №1323. Prefix function
 # https://informatics.mccme.ru/mod/statements/view3.php?id=17548&chapterid=1323
 x = 'abracadabradomabraca'
 

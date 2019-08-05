@@ -1,10 +1,9 @@
 class Board:
     def __init__(self, n):
         self.n = n
-        self.board = [['.' for _ in range(n)] for i in range(n)]
+        self.board = [['.' for _ in range(n)] for __ in range(n)]
 
-
-    def isValideMove(self, row, col):
+    def is_valid_move(self, row, col):
         col_j = col
         left_diag_j = col
         right_diag_j = col
@@ -19,31 +18,31 @@ class Board:
             right_diag_j += 1
         return True
 
-    def placeQueen(self, row, col):
+    def place_queen(self, row, col):
         self.board[row][col] = 'Q'
 
-    def removeQueen(self, row, col):
+    def remove_queen(self, row, col):
         self.board[row][col] = '.'
 
-    def outputFormat(self):
+    def output_format(self):
         return [''.join(row) for row in self.board]
 
 
-def solveQueens(n):
+def solve_queens(n):
     output = []
     board = Board(n)
     def dfs(row):
         if row == n:
-            output.append(board.outputFormat())
+            output.append(board.output_format())
             return
         for col in range(n):
-            if board.isValideMove(row, col):
-                board.placeQueen(row, col)
+            if board.is_valid_move(row, col):
+                board.place_queen(row, col)
                 dfs(row+1)
-                board.removeQueen(row, col)
+                board.remove_queen(row, col)
     dfs(0)
     return output
 
 
-print(solveQueens(4))
+print(solve_queens(4))
 

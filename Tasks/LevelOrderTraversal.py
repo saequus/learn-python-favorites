@@ -46,10 +46,10 @@ def levelOrderTraversal(root):
             res[depth] += [node.val]
 
         if node.left:
-            queue += [(node.left, depth + 1)]
+            queue += [(node, depth + 1)]
 
         if node.right:
-            queue += [(node.right, depth + 1)]
+            queue += [(node, depth + 1)]
 
     return res
 

@@ -28,16 +28,15 @@ class Graph:
             print('\n')
 
 
-if __name__ == '__main__':
-    g = Graph(6)
-    g.add_edge(0, 1)
-    g.add_edge(0, 3)
-    g.add_edge(1, 2)
-    g.add_edge(2, 3)
-    g.add_edge(3, 4)
-    g.add_edge(3, 5)
-    g.add_edge(4, 5)
-    g.print_graph()
+g = Graph(6)
+g.add_edge(0, 1)
+g.add_edge(0, 3)
+g.add_edge(1, 2)
+g.add_edge(2, 3)
+g.add_edge(3, 4)
+g.add_edge(3, 5)
+g.add_edge(4, 5)
+g.print_graph()
 
 
 

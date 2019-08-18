@@ -1,3 +1,8 @@
+# ============================================================================
+# ========================== CountSort Algorithm =============================
+# ============================================================================
+
+
 def count_sort(arr):
     output = [0 for _ in range(256)]
 
@@ -18,9 +23,9 @@ def count_sort(arr):
         count[i] += count[i - 1]
 
     # Build the output character array
-    for i in range(len(arr)):
-        output[count[ord(arr[i])] - 1] = arr[i]
-        count[ord(arr[i])] -= 1
+    for i in arr:
+        output[count[ord(i)] - 1] = i
+        count[ord(i)] -= 1
     # Copy the output array to arr, so that arr now
     # contains sorted characters
     for i in range(len(arr)):

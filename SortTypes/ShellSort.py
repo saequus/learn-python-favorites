@@ -1,3 +1,7 @@
+# ============================================================================
+# ======================= ShellSort Algorithm ============================
+# ============================================================================
+
 # Time complexity of above implementation of shellsort is O(n2). In this
 # implementation gap is reduce by half in every iteration. There are many
 # other ways to reduce gap which lead to better time complexity.

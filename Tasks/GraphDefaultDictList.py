@@ -7,17 +7,26 @@ class Node:
 
 
 class Graph:
-    def __init__(self, verteces_number):
-        self.verteces = verteces_number + 1
+    def __init__(self, vertexes_number):
+        self.vertexes = vertexes_number + 1
         self.graph = defaultdict(list)
 
     def add_edge(self, src, dst):
         self.graph[src].append(dst)
 
     def print_graph(self):
-        for i in range(self.verteces):
-            verteces = ', '.join(str(_) for _ in self.graph[i])
-            print('Vertex number {}'.format(i) + ' connected to ' + verteces + ' vertex(ces).')
+        for i in range(self.vertexes):
+            vertexes = ', '.join(str(_) for _ in self.graph[i])
+            if len(vertexes) == 1:
+                print(
+                    'Vertex number {}'.format(i)
+                    + ' connected to vertex number '
+                    + vertexes + '.')
+            else:
+                print(
+                    'Vertex number {}'.format(i)
+                    + ' connected to vertexes with numbers '
+                    + vertexes + '.')
 
     def breadth_first_search(self, s):
         visited = [False] * len(self.graph)
@@ -35,7 +44,7 @@ class Graph:
         return result
 
     def depth_first_search(self, start):
-        visited = [False] * self.verteces
+        visited = [False] * self.vertexes
         visited[start] = True
         stack = [start]
         result = '\nDepth First Search starting from %s: ' % start

@@ -1,28 +1,3 @@
-# import bs4 as bs
-# import urllib.request
-#
-# sauce = urllib.request.urlopen('https://pythonprogramming.net/parsememcparseface/')
-# soup = bs.BeautifulSoup(sauce, features='html.parser')
-# # for paragraph in soup.find_all('p'):
-# # #     print(paragraph.text)
-#
-# # for url in soup.find_all('a'):
-# #     print(url.get('href'))
-#
-# nav = soup.nav
-# #
-# # for item in nav.find_all('a'):
-# #     print(item.get('href'))
-#
-# body = soup.body
-#
-# # for div in soup.find_all('div', class_='body'):
-# # #     print(div.text)
-#
-# for div in soup.find_all('div', class_='body'):
-#     print(div.text)
-
-
 class Node():
     def __init__(self, val):
         self.val = val

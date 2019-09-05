@@ -137,6 +137,23 @@ class DoubleLinkedList:
             node = node.prev
         self.head, self.tail = self.tail, self.head
 
+    def move_to_end(self, val: int) -> None:
+        if not self.head:
+            print('Empty list')
+            return
+        node = self.head
+        while node.val != val:
+            if node is None:
+                print('No such node.')
+                return
+            node = node.next
+        node.prev.next = node.next
+        node.next.prev = node.prev
+        node.prev = self.tail
+        self.tail.next = node
+        node.next = None
+        self.tail = node
+
 
 l = DoubleLinkedList()
 l.insert_in_empty_list(0)
@@ -163,9 +180,11 @@ l.delete_by_value(3)
 print(l.traverse_forwards())
 print(l.traverse_backwards())
 l.reverse()
-print('reversed list:')
+print('reverse list')
 print(l.traverse_forwards())
 print(l.traverse_backwards())
-
-
+print('move 10 to the end')
+l.move_to_end(10)
+print(l.traverse_forwards())
+print(l.traverse_backwards())
 

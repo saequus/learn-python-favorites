@@ -1,5 +1,5 @@
-p = "aacecaaa"
-p1 = 'abcdabcdabia'
+p = 'aacecaaa'
+p1 = 'abcdabcdabi'
 
 
 def zfun(s):
@@ -34,37 +34,12 @@ def naive_z(string):
     return z
 
 
-def zf(s):
-    output = []
-    if not s:
-        return output
-    i, slen = 1, len(s)
-    output.append(slen)
-    while i < slen:
-        left, right = 0, i
-        while right < slen and s[left] == s[right]:
-            left += 1
-            right += 1
-        output.append(left)
-        i += 1
-    return output
+fs = 'Все о том же поет луна. Все о том же'
+fss = 'мне причем мне не очень'
 
-
-print(naive_z(p))
-print(naive_z(p1))
-
-# print(naive_z('asdfjm asdfjdm asdfnd s amdmms a asdfd'))
-
-print(' - - - - ')
-fs = 'Все о том же поет луна. Мне причудилось удивительное событие'
-fss = 'Мне при'
-
-print(zf(p))
-print(zf(p1))
-g = (str(fss + '^' + fs))
-t = zf(g)
-print(t)
-
-
+x1 = zfun(fs)
+print(x1)
+x2 = zfun(fss)
+print(x2)
 
 

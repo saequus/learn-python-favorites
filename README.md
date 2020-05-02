@@ -12,10 +12,11 @@ It's pretty simple. Suitable for Junior Programmers.
 Starting from 0.5 years of experience.
 
 ### Consists of
-+ Tasks
-+ Patterns
-+ Algorithms
-+ SortTypes
+    
+    Tasks
+    Patterns
+    Algorithms
+    SortTypes
 
 ### Running
-Every file can be run seperately in your favorite IDE; or simply in console with `python file.py`.
+Every file can be run separately in your favorite IDE; or simply in console with `python file.py`.
